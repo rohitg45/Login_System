@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+body {
+  padding: 90px 0 50px 0;
+}
+
+/* Header Part */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 0 15px;
+  z-index: 999;
+  background-color: dodgerblue;
+}
+header h1 {
+  float: left;
+  line-height: 80px;
+  margin-left: 20px;
+}
+header h1 a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* For top Menu */
+header ul {
+  float: right;
+  list-style: none;
+}
+header ul li {
+  display: inline-block;
+}
+header ul li a {
+  color: #fff;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 80px;
+  padding: 0 10px;
+  font-size: 18px;
+}
+header ul li a:hover {
+  background-color: rgb(255, 255, 255, 0.3);
+}
+
+/* For Main Container */
+.container {
+  padding: 25px 15px;
+}
+.container p {
+  margin-top: 10px;
+}
+
+/* For Alerts */
+.alert {
+  font-size: 15px;
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: 15px;
+  text-align: center;
+  border-radius: 3px;
+  padding: 12px 6px;
+}
+.success {
+  color: #fff;
+  background-color: rgb(0, 189, 0);
+}
+.danger {
+  color: #fff;
+  background-color: rgb(255, 51, 51);
+}
+
+/* For Login/Register Form */
+.box {
+  width: 100%;
+  max-width: 450px;
+  margin: auto;
+  padding: 30px 30px;
+  border-radius: 5px;
+  /* border:2px solid #aaa; */
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.box h1 {
+  font-size: 35px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* For grouping Input with Label */
+.form-group {
+  margin: 18px 0;
+}
+.form-group small {
+    color: red;
+}
+
+/* For Input Box */
+.input-box {
+  position: relative;
+}
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+  background-color: #fff;
+  pointer-events: none;
+  color: #777;
+}
+.input-box input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  font-size: 15px;
+  border: 2px solid #777;
+  outline: none;
+}
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  font-size: 14px;
+  transform: translate(-5px, -170%);
+  color: dodgerblue;
+}
+.input-box input:focus,
+.input-box input:valid {
+  border: 2px solid dodgerblue;
+  outline: none;
+  background-color: none;
+}
+
+/* For Buttons */
+.btn {
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 20px;
+  margin: 0 auto;
+  border: 0;
+  color: #fff;
+  border-radius: 5px;
+  background-color: dodgerblue;
+  text-decoration: none;
+  transition: transform 0.1s ease-in-out;
+  cursor: pointer;
+  outline: none;
+}
+.btn:focus {
+  outline: none;
+}
+.btn:active {
+  transform: scale(0.85);
+}
+
+/* For Login or Register */
+.log-btn {
+  display: block;
+  padding: 10px 0;
+  width: 50%;
+  font-size: 16px;
+  margin-top: 25px;
+  border-radius: 50px;
+}
+
+/* For Footer of Form */
+.box form .footer {
+  margin-top: 40px;
+  text-align: center;
+}
+.box form .footer a {
+  color: dodgerblue;
+}
+
+/* For Menu Icons */
+.menu-icon {
+  color: #fff;
+  line-height: 80px;
+  margin-right: 10px;
+  font-size: 50px;
+  font-weight: bolder;
+  float: right;
+  cursor: pointer;
+}
+
+.menu-icon {
+  display: none;
+}
+.menu-icon .close {
+  display: none;
+}
+#check {
+  display: none;
+}
+
+#check:checked ~ .side-bar {
+  left: 0;
+}
+#check:checked ~ .menu-icon .close {
+  display: block;
+}
+#check:checked ~ .menu-icon .open {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-icon,
+  .menu-icon .open {
+    display: block;
+  }
+
+  /* For Small Screen Menu */
+  .side-bar {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    left: -250px;
+    height: 100vh;
+    width: 250px;
+    padding-top: 50px;
+    background-color: #333;
+    transition: left 0.3s ease-in-out;
+  }
+  .side-bar ul {
+    float: unset;
+  }
+  .side-bar ul li {
+    display: block;
+  }
+  .side-bar ul li a {
+    display: block;
+    line-height: normal;
+    padding: 10px 20px;
+    border-bottom: 1px solid #aaa;
+  }
+}
